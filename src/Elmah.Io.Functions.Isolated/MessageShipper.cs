@@ -134,7 +134,17 @@ namespace Elmah.Io.Functions.Isolated
             if (string.IsNullOrWhiteSpace(request.Url.Query)) return null;
 
             var query = request.Url.Query.TrimStart('?');
-            return query.Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries).Select(s => new Item(s.Split(new[] { '=' })[0], s.Split(new[] { '=' })[1])).ToList();
+            return query
+                .Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(s =>
+                {
+                    var splitted = s.Split(new[] { '=' });
+                    var item = new Item();
+                    if (splitted.Length > 0) item.Key = splitted[0];
+                    if (splitted.Length > 1) item.Value = splitted[1];
+                    return item;
+                })
+                .ToList();
         }
 
         private static int? StatusCode(HttpResponseData response)

@@ -112,10 +112,18 @@ namespace Elmah.Io.Functions.Isolated
         private static List<Item> Cookies(HttpRequestData request)
         {
             if (request == null) return null;
-            return request
-                .Cookies?
-                .Select(c => new Item(c.Name, c.Value))
-                .ToList();
+            try
+            {
+                return request
+                    .Cookies?
+                    .Select(c => new Item(c.Name, c.Value))
+                    .ToList();
+            }
+            catch
+            {
+                // The functions runtime sometimes throw exceptions while fetching cookies like IndexOutOfBoundsException.
+                return null;
+            }
         }
 
         private static List<Item> ServerVariables(HttpRequestData request)

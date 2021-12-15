@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31410.357
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0ADCCBAD-7621-47AA-81DB-F14D0F66D49A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{D8F0474E-D51E-4A18-A514-D0BFD62C27A2}"
+	ProjectSection(SolutionItems) = preProject
+		samples\README.md = samples\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated", "src\Elmah.Io.Functions.Isolated\Elmah.Io.Functions.Isolated.csproj", "{20903610-65E8-4BA0-9366-57909B4D28B8}"
 EndProject
@@ -14,9 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.github\workflows\build.yml = .github\workflows\build.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Io.Functions.Isolated.HttpTrigger", "samples\Elmah.Io.Functions.Isolated.HttpTrigger\Elmah.Io.Functions.Isolated.HttpTrigger.csproj", "{19B64936-7100-45AF-A069-59B539EB01B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated.HttpTrigger", "samples\Elmah.Io.Functions.Isolated.HttpTrigger\Elmah.Io.Functions.Isolated.HttpTrigger.csproj", "{19B64936-7100-45AF-A069-59B539EB01B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Io.Functions.Isolated.TimerTrigger", "samples\Elmah.Io.Functions.Isolated.TimerTrigger\Elmah.Io.Functions.Isolated.TimerTrigger.csproj", "{E20810FD-067A-4224-841D-8CB5989B1CA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated.TimerTrigger", "samples\Elmah.Io.Functions.Isolated.TimerTrigger\Elmah.Io.Functions.Isolated.TimerTrigger.csproj", "{E20810FD-067A-4224-841D-8CB5989B1CA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated.HttpTrigger60", "samples\Elmah.Io.Functions.Isolated.HttpTrigger60\Elmah.Io.Functions.Isolated.HttpTrigger60.csproj", "{4424C00C-C554-4165-9337-10C13AB5B297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Io.Functions.Isolated.TimerTrigger60", "samples\Elmah.Io.Functions.Isolated.TimerTrigger60\Elmah.Io.Functions.Isolated.TimerTrigger60.csproj", "{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +43,14 @@ Global
 		{E20810FD-067A-4224-841D-8CB5989B1CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E20810FD-067A-4224-841D-8CB5989B1CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E20810FD-067A-4224-841D-8CB5989B1CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4424C00C-C554-4165-9337-10C13AB5B297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4424C00C-C554-4165-9337-10C13AB5B297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4424C00C-C554-4165-9337-10C13AB5B297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4424C00C-C554-4165-9337-10C13AB5B297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +59,8 @@ Global
 		{20903610-65E8-4BA0-9366-57909B4D28B8} = {0ADCCBAD-7621-47AA-81DB-F14D0F66D49A}
 		{19B64936-7100-45AF-A069-59B539EB01B3} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
 		{E20810FD-067A-4224-841D-8CB5989B1CA6} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
+		{4424C00C-C554-4165-9337-10C13AB5B297} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
+		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84E330D4-2E97-4CD9-B5F8-387CC2CC3B4D}

@@ -169,7 +169,7 @@ namespace Elmah.Io.Functions.Isolated
         private static string UserAgent()
         {
             return new StringBuilder()
-                .Append(new ProductInfoHeaderValue(new ProductHeaderValue("Elmah.Io.Functions", _assemblyVersion)).ToString())
+                .Append(new ProductInfoHeaderValue(new ProductHeaderValue("Elmah.Io.Functions.Isolated", _assemblyVersion)).ToString())
                 .Append(" ")
                 .Append(new ProductInfoHeaderValue(new ProductHeaderValue("Microsoft.Azure.Functions.Worker", _functionsAssemblyVersion)).ToString())
                 .ToString();

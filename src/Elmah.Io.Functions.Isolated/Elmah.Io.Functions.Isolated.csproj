@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>elmah.io logger for isolated Azure Functions</Description>
     <Authors>elmah.io</Authors>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <PackageId>Elmah.Io.Functions.Isolated</PackageId>
     <PackageTags>Error;Exception;Reporting;Management;Logging;ELMAH;Diagnostics;Tracing;Azure;Functions;AzureFunctions</PackageTags>
     <PackageIconUrl>https://secure.gravatar.com/avatar/5c4cb3646528821117abde6d2d5ee22d?s=64</PackageIconUrl>

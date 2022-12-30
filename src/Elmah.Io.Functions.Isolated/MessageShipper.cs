@@ -39,6 +39,7 @@ namespace Elmah.Io.Functions.Isolated
                 Severity = Severity.Error.ToString(),
                 Source = Source(baseException),
                 Application = options.Application,
+                Hostname = Hostname(),
             };
 
             if (options.OnFilter != null && options.OnFilter(createMessage))
@@ -73,6 +74,20 @@ namespace Elmah.Io.Functions.Isolated
                 options.OnError?.Invoke(createMessage, e);
                 // If there's a Exception while generating the error page, re-throw the original exception.
             }
+        }
+
+        private static string Hostname()
+        {
+            var machineName = Environment.MachineName;
+            if (!string.IsNullOrWhiteSpace(machineName)) return machineName;
+
+            machineName = Environment.GetEnvironmentVariable("COMPUTERNAME");
+            if (!string.IsNullOrWhiteSpace(machineName)) return machineName;
+
+            machineName = Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME");
+            if (!string.IsNullOrWhiteSpace(machineName)) return machineName;
+
+            return null;
         }
 
         private static string Url(HttpRequestData request)

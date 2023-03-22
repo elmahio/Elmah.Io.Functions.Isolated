@@ -24,7 +24,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --configuration Release --no-build --verbosity normal
     - name: Pack
       run: dotnet pack --configuration Release src/Elmah.Io.Functions.Isolated/Elmah.Io.Functions.Isolated.csproj /p:Version=4.0.${{ github.run_number }}-pre
     - name: Install dotnet-validate

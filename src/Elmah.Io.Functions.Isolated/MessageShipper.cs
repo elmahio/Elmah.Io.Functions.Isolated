@@ -67,7 +67,7 @@ namespace Elmah.Io.Functions.Isolated
 
             try
             {
-                await elmahIoClient.Messages.CreateAndNotifyAsync(options.LogId, createMessage);
+                await elmahIoClient.Messages.CreateAndNotifyAsync(options.LogId, createMessage, functionContext.CancellationToken);
             }
             catch (Exception e)
             {

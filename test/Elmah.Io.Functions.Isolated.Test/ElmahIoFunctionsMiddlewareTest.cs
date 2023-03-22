@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using Elmah.Io.Client;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Middleware;
+using System.Threading;
 
 namespace Elmah.Io.Functions.Isolated.Test
 {
@@ -50,7 +51,8 @@ namespace Elmah.Io.Functions.Isolated.Test
                         && msg.Detail != null
                         && msg.Type == "System.FormatException"
                         && msg.Hostname != null
-                        && msg.Severity == "Error"));
+                        && msg.Severity == "Error"),
+                    Arg.Any<CancellationToken>());
         }
 
         private Task Hello(FunctionContext context)

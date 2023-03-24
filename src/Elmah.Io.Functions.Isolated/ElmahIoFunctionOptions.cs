@@ -19,6 +19,11 @@ namespace Elmah.Io.Functions.Isolated
         public Guid LogId { get; set; }
 
         /// <summary>
+        /// The id of the heartbeat to send messages to.
+        /// </summary>
+        public string HeartbeatId { get; set; }
+
+        /// <summary>
         /// An application name to put on all error messages.
         /// </summary>
         public string Application { get; set; }

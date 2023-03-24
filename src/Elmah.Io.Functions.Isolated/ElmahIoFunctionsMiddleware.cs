@@ -13,6 +13,8 @@ namespace Elmah.Io.Functions.Isolated
         public ElmahIoFunctionsMiddleware(IOptions<ElmahIoFunctionOptions> options)
         {
             this.options = options.Value;
+            if (string.IsNullOrWhiteSpace(this.options.ApiKey)) throw new ArgumentNullException(nameof(this.options.ApiKey));
+            if (this.options.LogId == Guid.Empty) throw new ArgumentNullException(nameof(this.options.LogId));
         }
 
         public async Task Invoke(FunctionContext context, FunctionExecutionDelegate next)

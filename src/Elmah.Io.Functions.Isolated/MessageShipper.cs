@@ -181,7 +181,7 @@ namespace Elmah.Io.Functions.Isolated
             return baseException?.Source;
         }
 
-        private static string UserAgent()
+        internal static string UserAgent()
         {
             return new StringBuilder()
                 .Append(new ProductInfoHeaderValue(new ProductHeaderValue("Elmah.Io.Functions.Isolated", _assemblyVersion)).ToString())

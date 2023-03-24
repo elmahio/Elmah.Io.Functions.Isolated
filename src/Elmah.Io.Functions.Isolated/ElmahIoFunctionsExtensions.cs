@@ -29,5 +29,28 @@ namespace Elmah.Io.Functions.Isolated
             builder.AddElmahIo();
             return builder;
         }
+
+        /// <summary>
+        /// Add the elmah.io heartbeat middleware that will log either a healthy or unhealth heartbeat every time a function is running. This is primarily indented for
+        /// timed functions. Functions executed often should manually log heartbeats from a pre-determined schedule to avoid reaching the request limit on the elmah.io API.
+        /// Calling this method requires you to configure elmah.io options manually like this:
+        /// <code>app.Services.Configure&lt;ElmahIoFunctionOptions&gt;(configuration.GetSection("ElmahIo"));</code>
+        /// </summary>
+        public static IFunctionsWorkerApplicationBuilder AddHeartbeat(this IFunctionsWorkerApplicationBuilder builder)
+        {
+            builder.UseMiddleware<ElmahIoHeartbeatMiddleware>();
+            return builder;
+        }
+
+        /// <summary>
+        /// Add the elmah.io heartbeat middleware that will log either a healthy or unhealth heartbeat every time a function is running. This is primarily indented for
+        /// timed functions. Functions executed often should manually log heartbeats from a pre-determined schedule to avoid reaching the request limit on the elmah.io API.
+        /// </summary>
+        public static IFunctionsWorkerApplicationBuilder AddHeartbeat(this IFunctionsWorkerApplicationBuilder builder, Action<ElmahIoFunctionOptions> configureOptions)
+        {
+            builder.Services.Configure(configureOptions);
+            builder.AddHeartbeat();
+            return builder;
+        }
     }
 }

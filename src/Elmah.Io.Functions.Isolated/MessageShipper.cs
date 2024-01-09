@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Elmah.Io.Functions.Isolated
 {
-    internal class MessageShipper
+    internal static class MessageShipper
     {
-        internal static string _assemblyVersion = typeof(MessageShipper).Assembly.GetName().Version.ToString();
-        internal static string _functionsAssemblyVersion = typeof(FunctionContext).Assembly.GetName().Version.ToString();
+        private static string _assemblyVersion = typeof(MessageShipper).Assembly.GetName().Version.ToString();
+        private static string _functionsAssemblyVersion = typeof(FunctionContext).Assembly.GetName().Version.ToString();
 
         internal static IElmahioAPI elmahIoClient;
 
@@ -28,7 +28,7 @@ namespace Elmah.Io.Functions.Isolated
                 DateTime = DateTime.UtcNow,
                 Detail = Detail(exception),
                 Type = baseException?.GetType().FullName,
-                Title = baseException.Message,
+                Title = baseException?.Message ?? "An error happened",
                 Data = Data(exception, functionContext),
                 Cookies = Cookies(request),
                 ServerVariables = ServerVariables(request),
@@ -126,7 +126,7 @@ namespace Elmah.Io.Functions.Isolated
 
         private static List<Item> Cookies(HttpRequestData request)
         {
-            if (request == null) return null;
+            if (request == null) return new List<Item>();
             try
             {
                 return request
@@ -137,13 +137,13 @@ namespace Elmah.Io.Functions.Isolated
             catch
             {
                 // The functions runtime sometimes throw exceptions while fetching cookies like IndexOutOfBoundsException.
-                return null;
+                return new List<Item>();
             }
         }
 
         private static List<Item> ServerVariables(HttpRequestData request)
         {
-            if (request == null) return null;
+            if (request == null) return new List<Item>();
             return request
                 .Headers?
                 .Select(h => new Item(h.Key, h.Value != null && h.Value.Any() ? string.Join(",", h.Value) : string.Empty))
@@ -152,16 +152,16 @@ namespace Elmah.Io.Functions.Isolated
 
         private static List<Item> QueryString(HttpRequestData request)
         {
-            if (request == null) return null;
-            if (request.Url == null) return null;
-            if (string.IsNullOrWhiteSpace(request.Url.Query)) return null;
+            if (request == null) return new List<Item>();
+            if (request.Url == null) return new List<Item>();
+            if (string.IsNullOrWhiteSpace(request.Url.Query)) return new List<Item>();
 
             var query = request.Url.Query.TrimStart('?');
             return query
                 .Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(s =>
                 {
-                    var splitted = s.Split(new[] { '=' });
+                    var splitted = s.Split('=');
                     var item = new Item();
                     if (splitted.Length > 0) item.Key = splitted[0];
                     if (splitted.Length > 1) item.Value = splitted[1];

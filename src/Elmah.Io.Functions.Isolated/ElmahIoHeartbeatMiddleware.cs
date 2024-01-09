@@ -40,7 +40,7 @@ namespace Elmah.Io.Functions.Isolated
             }
             catch (Exception e)
             {
-                await api.Heartbeats.UnhealthyAsync(options.LogId, options.HeartbeatId, e?.ToString(), took: stopwatch.ElapsedMilliseconds, cancellationToken: context.CancellationToken);
+                await api.Heartbeats.UnhealthyAsync(options.LogId, options.HeartbeatId, e.ToString(), took: stopwatch.ElapsedMilliseconds, cancellationToken: context.CancellationToken);
                 throw;
             }
         }

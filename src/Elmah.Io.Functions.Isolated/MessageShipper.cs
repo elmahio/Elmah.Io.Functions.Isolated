@@ -12,10 +12,12 @@ namespace Elmah.Io.Functions.Isolated
 {
     internal static class MessageShipper
     {
-        private static string _assemblyVersion = typeof(MessageShipper).Assembly.GetName().Version.ToString();
-        private static string _functionsAssemblyVersion = typeof(FunctionContext).Assembly.GetName().Version.ToString();
+        private static readonly string _assemblyVersion = typeof(MessageShipper).Assembly.GetName().Version.ToString();
+        private static readonly string _functionsAssemblyVersion = typeof(FunctionContext).Assembly.GetName().Version.ToString();
 
+#pragma warning disable S2223 // Non-constant static fields should not be visible
         internal static IElmahioAPI elmahIoClient;
+#pragma warning restore S2223 // Non-constant static fields should not be visible
 
         public static async Task Ship(Exception exception, FunctionContext functionContext, ElmahIoFunctionOptions options)
         {
@@ -185,7 +187,7 @@ namespace Elmah.Io.Functions.Isolated
         {
             return new StringBuilder()
                 .Append(new ProductInfoHeaderValue(new ProductHeaderValue("Elmah.Io.Functions.Isolated", _assemblyVersion)).ToString())
-                .Append(" ")
+                .Append(' ')
                 .Append(new ProductInfoHeaderValue(new ProductHeaderValue("Microsoft.Azure.Functions.Worker", _functionsAssemblyVersion)).ToString())
                 .ToString();
         }

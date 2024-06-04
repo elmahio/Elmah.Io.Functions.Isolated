@@ -13,6 +13,8 @@ namespace Elmah.Io.Functions.Isolated
         private readonly ElmahIoFunctionOptions options;
         internal IElmahioAPI api;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3928:Parameter names used into ArgumentException constructors should match an existing one ", Justification = "The arguments are on options")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2208:Instantiate argument exceptions correctly", Justification = "The arguments are on options")]
         public ElmahIoHeartbeatMiddleware(IOptions<ElmahIoFunctionOptions> options)
         {
             this.options = options.Value;

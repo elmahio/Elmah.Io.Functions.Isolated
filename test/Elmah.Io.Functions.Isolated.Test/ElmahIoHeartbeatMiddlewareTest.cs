@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using NSubstitute;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -50,6 +51,7 @@ namespace Elmah.Io.Functions.Isolated.Test
                     Arg.Any<string>(),
                     Arg.Any<string>(),
                     Arg.Any<long?>(),
+                    Arg.Any<List<Check>>(),
                     Arg.Any<CancellationToken>());
         }
 
@@ -71,6 +73,7 @@ namespace Elmah.Io.Functions.Isolated.Test
                     Arg.Any<string>(),
                     Arg.Any<string>(),
                     Arg.Any<long?>(),
+                    Arg.Any<List<Check>>(),
                     Arg.Any<CancellationToken>());
         }
 

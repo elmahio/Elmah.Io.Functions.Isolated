@@ -44,11 +44,6 @@ namespace Elmah.Io.Functions.Isolated
                 Hostname = Hostname(),
             };
 
-            if (options.OnFilter != null && options.OnFilter(createMessage))
-            {
-                return;
-            }
-
             if (elmahIoClient == null)
             {
                 elmahIoClient = ElmahioAPI.Create(options.ApiKey, new ElmahIoOptions
@@ -56,6 +51,15 @@ namespace Elmah.Io.Functions.Isolated
                     Timeout = options.Timeout,
                     UserAgent = UserAgent(),
                 });
+
+                elmahIoClient.Messages.OnMessageFilter += (sender, args) =>
+                {
+                    var filter = options.OnFilter?.Invoke(args.Message);
+                    if (filter.HasValue && filter.Value)
+                    {
+                        args.Filter = true;
+                    }
+                };
 
                 elmahIoClient.Messages.OnMessage += (sender, args) =>
                 {

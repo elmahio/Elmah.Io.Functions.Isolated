@@ -98,7 +98,16 @@ namespace Elmah.Io.Functions.Isolated
 
         private static string Url(HttpRequestData request)
         {
-            return request?.Url?.AbsolutePath;
+            try
+            {
+                return request?.Url?.AbsolutePath;
+            }
+            catch (UriFormatException)
+            {
+                // GrpcHttpRequestData tries to create URLs from empty strings. In this case there's nothing else to do than to return null.
+            }
+
+            return null;
         }
 
         /// <summary>

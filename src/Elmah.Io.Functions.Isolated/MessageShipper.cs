@@ -168,8 +168,16 @@ namespace Elmah.Io.Functions.Isolated
         private static List<Item> QueryString(HttpRequestData request)
         {
             if (request == null) return new List<Item>();
-            if (request.Url == null) return new List<Item>();
-            if (string.IsNullOrWhiteSpace(request.Url.Query)) return new List<Item>();
+            try
+            {
+                if (request.Url == null) return new List<Item>();
+                if (string.IsNullOrWhiteSpace(request.Url.Query)) return new List<Item>();
+            }
+            catch (UriFormatException)
+            {
+                // GrpcHttpRequestData tries to create URLs from empty strings. In this case there's nothing else to do than to return null.
+                return new List<Item>();
+            }
 
             var query = request.Url.Query.TrimStart('?');
             return query

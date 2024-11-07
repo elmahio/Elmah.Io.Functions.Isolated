@@ -77,12 +77,12 @@ namespace Elmah.Io.Functions.Isolated.Test
                     Arg.Any<CancellationToken>());
         }
 
-        private Task Yes(FunctionContext context)
+        private static Task Yes(FunctionContext context)
         {
             return Task.CompletedTask;
         }
 
-        private Task No(FunctionContext context)
+        private static Task No(FunctionContext context)
         {
             throw new Exception("No");
         }

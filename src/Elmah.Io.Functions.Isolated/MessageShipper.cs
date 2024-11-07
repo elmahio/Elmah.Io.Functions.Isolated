@@ -141,7 +141,7 @@ namespace Elmah.Io.Functions.Isolated
 
         private static List<Item> Cookies(HttpRequestData request)
         {
-            if (request == null) return new List<Item>();
+            if (request == null) return [];
             try
             {
                 return request
@@ -152,13 +152,13 @@ namespace Elmah.Io.Functions.Isolated
             catch
             {
                 // The functions runtime sometimes throw exceptions while fetching cookies like IndexOutOfBoundsException.
-                return new List<Item>();
+                return [];
             }
         }
 
         private static List<Item> ServerVariables(HttpRequestData request)
         {
-            if (request == null) return new List<Item>();
+            if (request == null) return [];
             return request
                 .Headers?
                 .Select(h => new Item(h.Key, h.Value != null && h.Value.Any() ? string.Join(",", h.Value) : string.Empty))
@@ -167,16 +167,16 @@ namespace Elmah.Io.Functions.Isolated
 
         private static List<Item> QueryString(HttpRequestData request)
         {
-            if (request == null) return new List<Item>();
+            if (request == null) return [];
             try
             {
-                if (request.Url == null) return new List<Item>();
-                if (string.IsNullOrWhiteSpace(request.Url.Query)) return new List<Item>();
+                if (request.Url == null) return [];
+                if (string.IsNullOrWhiteSpace(request.Url.Query)) return [];
             }
             catch (UriFormatException)
             {
                 // GrpcHttpRequestData tries to create URLs from empty strings. In this case there's nothing else to do than to return null.
-                return new List<Item>();
+                return [];
             }
 
             var query = request.Url.Query.TrimStart('?');

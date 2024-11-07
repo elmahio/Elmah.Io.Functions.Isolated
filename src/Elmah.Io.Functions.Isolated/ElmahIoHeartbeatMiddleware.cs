@@ -21,6 +21,8 @@ namespace Elmah.Io.Functions.Isolated
             if (string.IsNullOrWhiteSpace(this.options.ApiKey)) throw new ArgumentNullException(nameof(this.options.ApiKey));
             if (this.options.LogId == Guid.Empty) throw new ArgumentNullException(nameof(this.options.LogId));
             if (string.IsNullOrWhiteSpace(this.options.HeartbeatId)) throw new ArgumentNullException(nameof(this.options.HeartbeatId));
+
+            MessageShipper.CreateInstallation(this.options);
         }
 
         public async Task Invoke(FunctionContext context, FunctionExecutionDelegate next)

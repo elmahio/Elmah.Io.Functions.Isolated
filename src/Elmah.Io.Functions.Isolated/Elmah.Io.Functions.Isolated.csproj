@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elmah.Io.Client" Version="[5.2.77-pre,6)" />
+    <PackageReference Include="Elmah.Io.Client" Version="[5.2.106-pre,6)" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.10.0" />
   </ItemGroup>
 

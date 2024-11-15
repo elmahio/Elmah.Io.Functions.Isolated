@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "Elmah.Io.Functions.Isolated.HttpTrigger70": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7157",
-      "launchBrowser": false
-    }
-  }
-}

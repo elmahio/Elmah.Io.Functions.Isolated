@@ -14,17 +14,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated.HttpTrigger60", "samples\Elmah.Io.Functions.Isolated.HttpTrigger60\Elmah.Io.Functions.Isolated.HttpTrigger60.csproj", "{4424C00C-C554-4165-9337-10C13AB5B297}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated.TimerTrigger60", "samples\Elmah.Io.Functions.Isolated.TimerTrigger60\Elmah.Io.Functions.Isolated.TimerTrigger60.csproj", "{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated.HttpTrigger70", "samples\Elmah.Io.Functions.Isolated.HttpTrigger70\Elmah.Io.Functions.Isolated.HttpTrigger70.csproj", "{80920715-331E-40C1-9EDF-770103DFBEB8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{14CC4080-B202-4A92-8235-25685E95598F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated.Test", "test\Elmah.Io.Functions.Isolated.Test\Elmah.Io.Functions.Isolated.Test.csproj", "{6BA2C665-AEED-4363-ADFD-6E99F5A8E384}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.Functions.Isolated.TimerTrigger60WithHeartbeat", "samples\Elmah.Io.Functions.Isolated.TimerTrigger60WithHeartbeat\Elmah.Io.Functions.Isolated.TimerTrigger60WithHeartbeat.csproj", "{453BBF36-2457-437D-8555-9265A1EE4BA1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Io.Functions.Isolated.HttpTrigger80", "samples\Elmah.Io.Functions.Isolated.HttpTrigger80\Elmah.Io.Functions.Isolated.HttpTrigger80.csproj", "{FC0EA614-9E38-46B6-A5F9-779463465F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Io.Functions.Isolated.HttpTrigger90", "samples\Elmah.Io.Functions.Isolated.HttpTrigger90\Elmah.Io.Functions.Isolated.HttpTrigger90.csproj", "{2A6DA607-F2C7-40A6-A4FC-9A744AFAD6B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Io.Functions.Isolated.TimerTrigger80", "samples\Elmah.Io.Functions.Isolated.TimerTrigger80\Elmah.Io.Functions.Isolated.TimerTrigger80.csproj", "{4045D8B1-3BA1-443A-AAE2-FA66C4DD044A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Io.Functions.Isolated.TimerTrigger80WithHeartbeat", "samples\Elmah.Io.Functions.Isolated.TimerTrigger80WithHeartbeat\Elmah.Io.Functions.Isolated.TimerTrigger80WithHeartbeat.csproj", "{5EEBAA17-3CC5-4D4C-874C-801359447CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,26 +40,26 @@ Global
 		{4424C00C-C554-4165-9337-10C13AB5B297}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4424C00C-C554-4165-9337-10C13AB5B297}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4424C00C-C554-4165-9337-10C13AB5B297}.Release|Any CPU.Build.0 = Release|Any CPU
-		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80920715-331E-40C1-9EDF-770103DFBEB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80920715-331E-40C1-9EDF-770103DFBEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80920715-331E-40C1-9EDF-770103DFBEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80920715-331E-40C1-9EDF-770103DFBEB8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6BA2C665-AEED-4363-ADFD-6E99F5A8E384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6BA2C665-AEED-4363-ADFD-6E99F5A8E384}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BA2C665-AEED-4363-ADFD-6E99F5A8E384}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BA2C665-AEED-4363-ADFD-6E99F5A8E384}.Release|Any CPU.Build.0 = Release|Any CPU
-		{453BBF36-2457-437D-8555-9265A1EE4BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{453BBF36-2457-437D-8555-9265A1EE4BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{453BBF36-2457-437D-8555-9265A1EE4BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{453BBF36-2457-437D-8555-9265A1EE4BA1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC0EA614-9E38-46B6-A5F9-779463465F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC0EA614-9E38-46B6-A5F9-779463465F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC0EA614-9E38-46B6-A5F9-779463465F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC0EA614-9E38-46B6-A5F9-779463465F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6DA607-F2C7-40A6-A4FC-9A744AFAD6B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6DA607-F2C7-40A6-A4FC-9A744AFAD6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6DA607-F2C7-40A6-A4FC-9A744AFAD6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6DA607-F2C7-40A6-A4FC-9A744AFAD6B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4045D8B1-3BA1-443A-AAE2-FA66C4DD044A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4045D8B1-3BA1-443A-AAE2-FA66C4DD044A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4045D8B1-3BA1-443A-AAE2-FA66C4DD044A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4045D8B1-3BA1-443A-AAE2-FA66C4DD044A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EEBAA17-3CC5-4D4C-874C-801359447CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EEBAA17-3CC5-4D4C-874C-801359447CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EEBAA17-3CC5-4D4C-874C-801359447CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EEBAA17-3CC5-4D4C-874C-801359447CCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,11 +67,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{20903610-65E8-4BA0-9366-57909B4D28B8} = {0ADCCBAD-7621-47AA-81DB-F14D0F66D49A}
 		{4424C00C-C554-4165-9337-10C13AB5B297} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
-		{276A5BA9-3153-4C47-8AA2-8DAC68D6C31A} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
-		{80920715-331E-40C1-9EDF-770103DFBEB8} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
 		{6BA2C665-AEED-4363-ADFD-6E99F5A8E384} = {14CC4080-B202-4A92-8235-25685E95598F}
-		{453BBF36-2457-437D-8555-9265A1EE4BA1} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
 		{FC0EA614-9E38-46B6-A5F9-779463465F17} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
+		{2A6DA607-F2C7-40A6-A4FC-9A744AFAD6B6} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
+		{4045D8B1-3BA1-443A-AAE2-FA66C4DD044A} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
+		{5EEBAA17-3CC5-4D4C-874C-801359447CCA} = {D8F0474E-D51E-4A18-A514-D0BFD62C27A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84E330D4-2E97-4CD9-B5F8-387CC2CC3B4D}

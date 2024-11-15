@@ -23,9 +23,10 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Check vulnerable NuGet packages
-      uses: elmahio/github-check-vulnerable-nuget-packages-action@v1
+      uses: elmahio/github-check-vulnerable-nuget-packages-action@v2
       with:
-        project: 'src/Elmah.Io.Functions.Isolated/Elmah.Io.Functions.Isolated.csproj'
+        projects: |
+          src/Elmah.Io.Functions.Isolated/Elmah.Io.Functions.Isolated.csproj
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test

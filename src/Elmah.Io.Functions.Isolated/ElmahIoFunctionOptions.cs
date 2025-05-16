@@ -51,5 +51,11 @@ namespace Elmah.Io.Functions.Isolated
         /// of some error messages. If the filter action returns true, the error is ignored.
         /// </summary>
         public Func<CreateMessage, bool> OnFilter { get; set; }
+
+        /// <summary>
+        /// Register an action to be called before creating an installation. Use the OnInstallation
+        /// action to decorate installations with additional information related to your environment.
+        /// </summary>
+        public Action<CreateInstallation> OnInstallation { get; set; }
     }
 }

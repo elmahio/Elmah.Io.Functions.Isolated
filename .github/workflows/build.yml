@@ -12,13 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: |
           6.0.x
-          7.0.x
           8.0.x
           9.0.x
     - name: Install dependencies
@@ -33,13 +32,13 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack --configuration Release src/Elmah.Io.Functions.Isolated/Elmah.Io.Functions.Isolated.csproj /p:Version=5.3.${{ github.run_number }}-pre
+      run: dotnet pack --configuration Release src/Elmah.Io.Functions.Isolated/Elmah.Io.Functions.Isolated.csproj /p:Version=5.3.${{ github.run_number }}
     - name: Install dotnet-validate
-      run: dotnet tool install --global dotnet-validate --version 0.0.1-preview.304
+      run: dotnet tool install --global dotnet-validate --version 0.0.1-preview.537
     - name: Validate
-      run: dotnet-validate package local src/Elmah.Io.Functions.Isolated/bin/Release/Elmah.Io.Functions.Isolated.5.3.${{ github.run_number }}-pre.nupkg
+      run: dotnet-validate package local src/Elmah.Io.Functions.Isolated/bin/Release/Elmah.Io.Functions.Isolated.5.3.${{ github.run_number }}.nupkg
     - name: Push to nuget.org
-      run: dotnet nuget push src/Elmah.Io.Functions.Isolated/bin/Release/Elmah.Io.Functions.Isolated.5.3.${{ github.run_number }}-pre.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push src/Elmah.Io.Functions.Isolated/bin/Release/Elmah.Io.Functions.Isolated.5.3.${{ github.run_number }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
       if: ${{ github.event_name == 'push' }}
 
     - name: Refresh Bugster

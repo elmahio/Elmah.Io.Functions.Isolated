@@ -1,0 +1,28 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "ApiKey": "API_KEY",
+    "LogId": "LOG_ID",
+    "ElmahIoFunctionOptions": {
+      "Application": "Youseful.Seymour",
+      "ApiKey": "a3cbf404deab467383ef80e0e9652714",
+      "LogId": "cf312012-856a-49f1-be0a-0400e5e3b962"
+    }
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "Microsoft": "Information",
+      "Microsoft.AspNetCore.Mvc.Razor.Internal": "Information",
+      "Microsoft.AspNetCore.Mvc.Razor.Razor": "Information",
+      "Microsoft.AspNetCore.Mvc.Razor": "Information"
+    }
+  },
+  "ElmahIoFunctionOptions": {
+    "Application": "Youseful.Seymour",
+    "ApiKey": "API_KEY",
+    "LogId": "LOG_ID"
+  }
+}

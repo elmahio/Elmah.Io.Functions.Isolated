@@ -240,8 +240,8 @@ namespace Elmah.Io.Functions.Isolated
             }
 
             var query = request.Url.Query.TrimStart('?');
-            return query
-                .Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries)
+            return [.. query
+                .Split(['&'], StringSplitOptions.RemoveEmptyEntries)
                 .Select(s =>
                 {
                     var splitted = s.Split('=');
@@ -249,8 +249,7 @@ namespace Elmah.Io.Functions.Isolated
                     if (splitted.Length > 0) item.Key = splitted[0];
                     if (splitted.Length > 1) item.Value = splitted[1];
                     return item;
-                })
-                .ToList();
+                })];
         }
 
         private static int? StatusCode(HttpResponseData response)
